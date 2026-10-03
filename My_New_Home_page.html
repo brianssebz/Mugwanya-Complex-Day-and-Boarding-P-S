@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. John Paul Mugwanya Complex School</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* ===== SCREEN SCALING =====
+           All sizes below use rem instead of px. On a laptop (16px) the page looks
+           exactly as before. On a TV or very large screen the base size grows,
+           so everything scales up together. */
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        @media (min-width: 1800px) { html { font-size: 125%; } }
+        @media (min-width: 2560px) { html { font-size: 160%; } }
+
+        img { max-width: 100%; }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        .school-title {
+            color: #0d3b66;
+            margin: 0;
+            font-size: clamp(1.1rem, 4.5vw, 1.8125rem);
+            font-weight: bold;
+            overflow-wrap: break-word;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .institution-title {
+            color: #148eb3;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.3125rem;
+            letter-spacing: 1px;
+        }
+
+        .main-heading {
+            color: #0d3b66;
+            font-size: 1.5625rem;
+            margin-bottom: 0.625rem;
+        }
+
+        .motto {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            margin-bottom: 1.875rem;
+        }
+
+        .school-image {
+            width: 100%;
+            max-width: 37.5rem;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        .slider-container {
+            width: 89%;
+            margin: 2.5rem;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .slides {
+            display: flex;
+            width: 600%; /* 100% * 6 photos */
+            animation: slideAnimation 30s infinite;
+        }
+
+        .slide {
+            width: 16.666%; /* 100% / 6 photos */
+        }
+
+        .slide img {
+            width: 100%;
+            /* 500px on laptops, shorter on tablets/phones, taller on TVs */
+            height: clamp(12.5rem, 40vw, 31.25rem);
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes slideAnimation {
+            0% { transform: translateX(0%); }
+            16% { transform: translateX(0%); }
+            20% { transform: translateX(-16.666%); }
+            36% { transform: translateX(-16.666%); }
+            40% { transform: translateX(-33.333%); }
+            56% { transform: translateX(-33.333%); }
+            60% { transform: translateX(-50%); }
+            76% { transform: translateX(-50%); }
+            80% { transform: translateX(-66.666%); }
+            96% { transform: translateX(-66.666%); }
+            100% { transform: translateX(0%); }
+        }
+
+        .section-heading {
+            color: #0d3b66;
+            font-size: 1.5rem;
+            margin-bottom: 1.5625rem;
+            text-align: center;
+            border-bottom: 2px solid #148eb3;
+            padding-bottom: 0.625rem;
+            width: 100%;
+            max-width: 37.5rem;
+        }
+
+        .school-section h2 {
+            color: #0d3b66;
+            font-size: 1.5rem;
+            margin-top: 1.25rem;
+            margin-bottom: 0.3125rem;
+        }
+
+        .school-section .underline {
+            width: 12.5rem;
+            max-width: 100%;
+            height: 2px;
+            background-color: #148eb3;
+            margin: 0 auto 0.9375rem auto;
+        }
+
+        .school-section p {
+            font-size: 1rem;
+            color: #333;
+            max-width: 50rem;
+            margin: 0 auto 1.875rem auto;
+            line-height: 1.5;
+        }
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.25rem;
+            width: 100%;
+            max-width: 62.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .club-card {
+            background-color: #f0f4f8;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+        }
+
+        .club-card:hover {
+            transform: translateY(-0.3125rem);
+            background-color: #e6eff7;
+        }
+
+        .club-card h3 {
+            color: #148eb3;
+            margin: 0 0 0.625rem 0;
+            font-size: 1.125rem;
+        }
+
+        .club-card p {
+            margin: 0;
+            color: #555;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .school-section {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.25rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        /* ===== TABLETS AND SMALL LAPTOPS ===== */
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .clubs-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .slider-container {
+                width: 100%;
+                margin: 1.25rem 0;
+            }
+        }
+
+        /* ===== PHONES ===== */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+
+            .clubs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .school-section {
+                padding: 0.625rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg"School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us & Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="school-title">ST. JOHN PAUL MUGWANYA COMPLEX DAY AND BOARDING PRIMARY SCHOOL</h1>
+        <h2 class="main-heading">Welcome to Our School</h2>
+        <p class="motto">Motto: Education for Quality Life</p>
+
+        
+        <div class="slider-container">
+<div class="slides">
+<div class="slide"><img src="./School structure.jpg" alt="School Structure"></div>
+<div class="slide"><img src="./School Parade.jpg" alt="pupils"></div>
+<div class="slide"><img src="./Arieal View 2.jpg" alt="MDD"></div>
+<div class="slide"><img src="./Class.jpg" alt="learners"></div>
+<div class="slide"><img src="./Excited pupils.jpg" alt="Nansa"></div>
+<div class="slide"><img src="./Mengo.jpg" alt="Event"></div>
+</div>
+</div>
+
+
+        <h2 class="section-heading">School Clubs & Movements</h2>
+        <div class="clubs-grid">
+            <div class="club-card">
+                <h3>Red Cross</h3>
+                <p>Teaches basic first aid, health awareness, and fosters a heart for humanitarian aid.</p>
+            </div>
+            <div class="club-card">
+                <h3>Scouting</h3>
+                <p>Instills discipline, survival skills, leadership, and a spirit of community service.</p>
+            </div>
+            <div class="club-card">
+                <h3>Girl Guides</h3>
+                <p>Empowers young girls with essential life skills, confidence, and moral integrity.</p>
+            </div>
+            <div class="club-card">
+                <h3>Debating Club</h3>
+                <p>Develops public speaking, critical thinking, and articulate expression in our learners.</p>
+            </div>
+            <div class="club-card">
+                <h3>School Choir</h3>
+                <p>Nurtures musical talents through choral singing, traditional dance, and instrumental training.</p>
+            </div>
+            <div class="club-card">
+                <h3>Drama Club</h3>
+                <p>Builds creative performance skills, theatrical confidence, and storytelling expression.</p>
+            </div>
+            <div class="club-card">
+                <h3>Scripture Union</h3>
+                <p>Encourages spiritual growth, moral values, fellowship, and faith-centered leadership.</p>
+            </div>
+            <div class="club-card">
+                <h3>Wildlife Club</h3>
+                <p>Promotes environmental conservation, nature appreciation, and eco-friendly habits.</p>
+            </div>
+        </div>
+
+        <section class="school-section"> <h2>School Vision</h2> <div class="underline"></div> <p>To be a leading primary school known for academic excellence, dedicated teachers, and well-rounded students.</p>
+
+<h2>School Mission</h2> <div class="underline"></div> <p>To deliver a high-quality, inclusive primary education that inspires a lifelong love of learning and critical thinking.</p> </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

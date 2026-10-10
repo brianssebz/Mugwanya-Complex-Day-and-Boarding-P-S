@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girl Guides | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="Girl Guiding is a worldwide movement that helps girls and young women grow into confident, capable and responsible people. It began in England in 1910,...">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== CLUB ARTICLE PAGES ===== */
+        .club-article {
+            width: 100%;
+            max-width: 46rem;
+            text-align: left;
+        }
+
+        .article-head {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .club-icon {
+            flex: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .club-icon svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .club-article .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .club-article h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .club-article .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .club-article p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .club-article h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .club-article h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .club-article h3 {
+            color: #0d3b66;
+            font-size: 1.0625rem;
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .club-article ul,
+        .club-article ol {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .club-article li {
+            margin-bottom: 0.4rem;
+        }
+
+        .club-article li::marker {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .club-article .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 32%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .terms {
+            margin: 0 0 1rem;
+        }
+
+        .terms dt {
+            color: #0d3b66;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .terms dd {
+            margin: 0.15rem 0 0;
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .club-article .closing {
+            border-top: 2px solid #148eb3;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            color: #0d3b66;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .article-head {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="club-article">
+            <div class="article-head">
+                <div class="club-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8l-6.2 3.4 1.4-7L2 9.4l7-.9z"/></svg></div>
+                <div>
+                    <p class="kicker">School Clubs &amp; Movements</p>
+                    <h1>Girl Guides</h1>
+                    <p class="standfirst">Confident girls, strong values and useful life skills.</p>
+                </div>
+            </div>
+            <hr class="article-rule">
+            <p>Girl Guiding is a worldwide movement that helps girls and young women grow into confident, capable and responsible people. It began in England in 1910, when Robert Baden-Powell and his sister Agnes Baden-Powell started the Girl Guides after girls asked to take part in Scouting activities. Today it is a global movement, and Uganda has its own national association, the Uganda Girl Guides Association.</p>
+            <p>In our school, the Girl Guides group empowers girls with essential life skills, confidence and moral integrity. Members learn useful practical skills, take responsibility, speak up for themselves and others, and serve their community. They are encouraged to stay in school, to work hard and to aim high.</p>
+            <aside class="glance" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <dl>
+            <dt>Started</dt>
+            <dd>1910, in England</dd>
+            <dt>Founders</dt>
+            <dd>Robert Baden-Powell and Agnes Baden-Powell</dd>
+            <dt>Motto</dt>
+            <dd>Be Prepared</dd>
+            <dt>Emblem</dt>
+            <dd>The trefoil, a symbol with three leaves</dd>
+            <dt>World Thinking Day</dt>
+            <dd>22 February, when Guides around the world remember one another</dd>
+            <dt>Uganda body</dt>
+            <dd>Uganda Girl Guides Association</dd>
+                </dl>
+            </aside>
+        <section>
+            <h2>What the club aims to do</h2>
+            <ul>
+                <li>Build girls’ confidence, self-respect and courage to speak.</li>
+                <li>Teach practical life skills that help at home and in later life.</li>
+                <li>Develop moral values such as honesty, kindness and responsibility.</li>
+                <li>Prepare girls to lead, to plan and to work as a team.</li>
+                <li>Encourage service to the community and care for the environment.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>The Guide Promise and Law</h2>
+            <p>Guides promise to do their best to be true to their faith, to serve other people, and to keep the Guide Law. The law encourages honesty, helpfulness, courtesy, kindness, cheerfulness, and respect for others and for the environment. Members try to practise these values every day.</p>
+        </section>
+        <section>
+            <h2>What members do</h2>
+            <h3>Life skills</h3>
+            <ul>
+                <li>Cooking and nutrition: preparing simple balanced meals and keeping the kitchen clean and safe.</li>
+                <li>Basic sewing and mending, and handwork such as weaving and beadwork.</li>
+                <li>Home care: keeping a home clean, washing clothes and caring for a sick person.</li>
+                <li>Gardening and growing vegetables.</li>
+                <li>Money skills: saving, planning how to spend, and honesty with money.</li>
+                <li>Personal hygiene and neatness.</li>
+            </ul>
+            <h3>Safety and first aid</h3>
+            <ul>
+                <li>Basic first aid for cuts, burns, nosebleeds and fainting.</li>
+                <li>Road safety and staying safe at home, at school and on the way to and from school.</li>
+                <li>Knowing that if something feels wrong, a girl should say no, get away and tell a trusted adult.</li>
+                <li>Age-appropriate talks on personal hygiene and growing up, given by trusted women teachers and with the guidance of parents.</li>
+            </ul>
+            <h3>Leadership and confidence</h3>
+            <ul>
+                <li>Speaking before a group, reading aloud and presenting ideas.</li>
+                <li>Taking turns to lead a patrol, to chair a meeting and to plan a project.</li>
+                <li>Encouraging and supporting one another, and learning to solve disagreements peacefully.</li>
+                <li>Discussing girls’ rights and the value of education, and setting goals for the future.</li>
+            </ul>
+            <h3>Service, nature and outings</h3>
+            <ul>
+                <li>Community projects such as cleaning, visiting the elderly, or helping families in need.</li>
+                <li>Nature walks, tree planting and caring for the school garden.</li>
+                <li>Outdoor cooking and simple camp-craft on outings arranged by the school.</li>
+                <li>Marking World Thinking Day with songs, a talk or a friendship project.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>A typical meeting</h2>
+            <ol>
+                <li>Members gather in their patrols, greet one another and sing or say the Guide Promise.</li>
+                <li>The leader introduces the day’s skill or topic, such as preparing a simple healthy meal.</li>
+                <li>Members practise the skill in small groups.</li>
+                <li>The groups share what they have learned, and each patrol reports back.</li>
+                <li>A game or song follows to build friendship and energy.</li>
+                <li>The group plans a service project or reviews progress on one.</li>
+                <li>Members tidy up and close the meeting.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Skills and values pupils gain</h2>
+            <ul>
+                <li>Confidence and the courage to speak up.</li>
+                <li>Practical skills for daily life.</li>
+                <li>Honesty, kindness and respect for others.</li>
+                <li>Leadership, teamwork and a spirit of service.</li>
+                <li>Resilience, which means carrying on and doing well even when things are difficult.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Who can join, and how</h2>
+            <p>The group is for girls of the school who are interested. Parents or guardians are informed, and the teacher in charge explains any items needed, such as a uniform or a notebook. Girls take part according to their age and class level.</p>
+            <p>For meeting days, times and any contributions, please ask the teacher in charge or the school office.</p>
+        </section>
+        <section>
+            <h2>Safety and discipline</h2>
+            <p>Activities are supervised by teachers. Sensitive topics are handled by trusted women teachers and in an age-appropriate way. Members respect one another’s privacy, and every girl has the right to feel safe and heard. Kitchen equipment, fire and tools are used only with supervision.</p>
+        </section>
+        <section>
+            <h2>Frequently asked questions</h2>
+            <h3>Are Girl Guides and Scouts the same?</h3>
+            <p>They share the same founders, the same motto and many of the same ideas, but they are separate groups. Girl Guides focuses on the growth of girls and on the skills and confidence they need.</p>
+            <h3>Is Girl Guiding only about home skills such as cooking and sewing?</h3>
+            <p>No. Those are only part of it. Members also learn first aid, leadership, public speaking, planning, safety, environmental care and service.</p>
+            <h3>Do Guides go on camps?</h3>
+            <p>Outings and camps may be arranged. They are always supervised, planned in advance, and need the permission of parents or guardians.</p>
+            <h3>Will my daughter need a uniform?</h3>
+            <p>She may be asked to wear Guide uniform on activity days. The teacher in charge explains what is needed.</p>
+            <h3>How will it help my daughter’s schooling?</h3>
+            <p>Girls who are confident, organised and encouraged to set goals usually do better in class. The group also teaches them that their education and their voice matter.</p>
+        </section>
+            <p class="closing">Girl Guides helps every member to discover her strengths, to value herself and others, and to become a confident young woman who is ready to lead and to serve.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

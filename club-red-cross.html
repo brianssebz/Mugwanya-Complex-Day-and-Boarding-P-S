@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Cross | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="The Red Cross club introduces pupils to the work of the Red Cross, one of the largest humanitarian movements in the world. Its purpose is simple: to...">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== CLUB ARTICLE PAGES ===== */
+        .club-article {
+            width: 100%;
+            max-width: 46rem;
+            text-align: left;
+        }
+
+        .article-head {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .club-icon {
+            flex: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .club-icon svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .club-article .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .club-article h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .club-article .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .club-article p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .club-article h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .club-article h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .club-article h3 {
+            color: #0d3b66;
+            font-size: 1.0625rem;
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .club-article ul,
+        .club-article ol {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .club-article li {
+            margin-bottom: 0.4rem;
+        }
+
+        .club-article li::marker {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .club-article .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 32%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .terms {
+            margin: 0 0 1rem;
+        }
+
+        .terms dt {
+            color: #0d3b66;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .terms dd {
+            margin: 0.15rem 0 0;
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .club-article .closing {
+            border-top: 2px solid #148eb3;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            color: #0d3b66;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .article-head {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="club-article">
+            <div class="article-head">
+                <div class="club-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/><path d="M12 8v6M9 11h6"/></svg></div>
+                <div>
+                    <p class="kicker">School Clubs &amp; Movements</p>
+                    <h1>Red Cross</h1>
+                    <p class="standfirst">Learning to help others in times of need.</p>
+                </div>
+            </div>
+            <hr class="article-rule">
+            <p>The Red Cross club introduces pupils to the work of the Red Cross, one of the largest humanitarian movements in the world. Its purpose is simple: to protect life and health, to ease human suffering wherever it is found, and to treat every person with respect. In our school, the club teaches children how to give basic first aid, how to keep themselves and others healthy, and how to care for people who are sick, hungry or in trouble.</p>
+            <p>The Red Cross idea began with a Swiss businessman, Henry Dunant. In 1859 he saw thousands of wounded soldiers left without care after the battle of Solferino, in Italy. He organised local people to help the injured, whichever side they had fought on, and he later called on the world to form societies that would care for the wounded. That call grew into the Red Cross and Red Crescent Movement. Uganda has its own national society, the Uganda Red Cross Society, which responds to emergencies such as floods, fires, landslides and disease outbreaks.</p>
+            <aside class="glance" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <dl>
+            <dt>Part of</dt>
+            <dd>The Red Cross and Red Crescent Movement</dd>
+            <dt>Founder of the idea</dt>
+            <dd>Henry Dunant (Switzerland)</dd>
+            <dt>National society in Uganda</dt>
+            <dd>Uganda Red Cross Society</dd>
+            <dt>Seven principles</dt>
+            <dd>Humanity, impartiality, neutrality, independence, voluntary service, unity and universality</dd>
+            <dt>World Red Cross and Red Crescent Day</dt>
+            <dd>8 May</dd>
+            <dt>Main focus in school</dt>
+            <dd>First aid, health and hygiene, caring for others</dd>
+                </dl>
+            </aside>
+        <section>
+            <h2>What the club aims to do</h2>
+            <ul>
+                <li>Teach pupils basic first aid that they can use at school and at home.</li>
+                <li>Promote cleanliness, good hygiene and healthy habits.</li>
+                <li>Build a caring attitude towards the sick, the elderly, people with disabilities and the poor.</li>
+                <li>Encourage volunteering, which means helping others without expecting a reward.</li>
+                <li>Prepare pupils to stay calm and to act sensibly in an emergency.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>The seven principles in simple words</h2>
+            <p>Every Red Cross and Red Crescent society in the world follows the same seven principles. Members learn what each one means in everyday school life.</p>
+            <dl class="terms">
+                <dt>Humanity</dt>
+                <dd>We help every person who is suffering and we protect life and health.</dd>
+                <dt>Impartiality</dt>
+                <dd>We help people according to their need only, whatever their tribe, nationality, religion or social position.</dd>
+                <dt>Neutrality</dt>
+                <dd>We do not take sides in fights or arguments, so that everyone can trust us.</dd>
+                <dt>Independence</dt>
+                <dd>We make our own decisions about how best to help people.</dd>
+                <dt>Voluntary service</dt>
+                <dd>We help because we choose to, not to make money.</dd>
+                <dt>Unity</dt>
+                <dd>There is only one Red Cross society in a country, and it is open to everyone.</dd>
+                <dt>Universality</dt>
+                <dd>The movement is worldwide and all its societies are equal and share the same duty to help.</dd>
+            </dl>
+        </section>
+        <section>
+            <h2>What members do</h2>
+            <h3>First aid practice</h3>
+            <p>With a trained teacher or instructor guiding every step, members learn and practise the following:</p>
+            <ul>
+                <li>Washing and covering small cuts and grazes with a clean dressing.</li>
+                <li>Stopping bleeding by pressing firmly on the wound with a clean cloth.</li>
+                <li>Cooling a burn under clean, running water for at least ten minutes.</li>
+                <li>Helping a person with a nosebleed to sit up, lean forward and pinch the soft part of the nose.</li>
+                <li>Helping a person who has fainted to lie down and rest with the legs raised.</li>
+                <li>Keeping a person with a suspected broken bone as still as possible while help is called.</li>
+                <li>Placing an unconscious person who is breathing in the recovery position (older pupils practise this gently on a partner) and calling an adult at once.</li>
+                <li>Using a triangular bandage to make a sling or to hold a dressing in place.</li>
+                <li>Preparing and packing a first-aid kit: plasters, gauze, bandages, scissors, gloves, tape, cotton wool and antiseptic wipes.</li>
+            </ul>
+            <p>Members are taught that first aid is only the first help. Serious injuries must always be reported to a teacher immediately so that a health worker can be called.</p>
+            <h3>Health and hygiene campaigns</h3>
+            <ul>
+                <li>Washing hands with soap and clean water after using the toilet and before eating or handling food.</li>
+                <li>Drinking only safe water, which means water that has been boiled or properly treated, and keeping water containers covered.</li>
+                <li>Keeping latrines, classrooms and the compound clean.</li>
+                <li>Preventing malaria by sleeping under a treated mosquito net and by clearing places where water collects and mosquitoes breed.</li>
+                <li>Eating balanced meals and caring for teeth, skin, hair and clothes.</li>
+                <li>Sharing these messages with the whole school through songs, drama, posters and short talks at assembly.</li>
+            </ul>
+            <h3>Caring for others</h3>
+            <ul>
+                <li>Collecting items such as clothes, soap and food to share with families in need.</li>
+                <li>Visiting and encouraging the sick and the elderly.</li>
+                <li>Welcoming new and younger pupils and helping them to feel safe.</li>
+                <li>Accompanying an unwell or injured classmate to a teacher.</li>
+                <li>Marking World Red Cross and Red Crescent Day with a talk, a march or a clean-up.</li>
+            </ul>
+            <h3>Preparing for emergencies</h3>
+            <ul>
+                <li>Taking part in fire drills and learning the safest way out of each building and where to gather afterwards.</li>
+                <li>Learning how to behave during storms, floods and other dangers.</li>
+                <li>Learning what to tell an adult or a health worker in an emergency: your name, where you are and what has happened.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>A typical meeting</h2>
+            <ol>
+                <li>Members arrive, greet one another and settle down; the leader takes the register.</li>
+                <li>The group recalls what was learned at the last meeting.</li>
+                <li>The leader demonstrates a new skill, such as bandaging a hand.</li>
+                <li>Members practise in pairs while the leader moves around to correct and encourage.</li>
+                <li>The group discusses questions and talks about when the skill would be needed.</li>
+                <li>Members plan their next service activity, such as a hygiene talk or a donation drive.</li>
+                <li>The group tidies the materials and the meeting closes.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Skills and values pupils gain</h2>
+            <ul>
+                <li>Practical first aid knowledge and the confidence to use it safely.</li>
+                <li>Calmness and quick, sensible thinking in difficult situations.</li>
+                <li>Compassion, respect and fairness towards every person.</li>
+                <li>Cleanliness and responsibility for one’s own health.</li>
+                <li>Teamwork, leadership and a habit of serving others.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Who can join, and how</h2>
+            <p>Any interested pupil may ask to join. Membership is voluntary and parents or guardians are kept informed. A pupil who wants to join can speak to the teacher in charge or to the class teacher. Lessons are arranged to suit each pupil’s age: younger pupils begin with simple topics such as handwashing and caring for small wounds, and older pupils take on more.</p>
+            <p>For meeting days, times and any contributions, please ask the teacher in charge or the school office.</p>
+        </section>
+        <section>
+            <h2>Safety and discipline</h2>
+            <p>All practice is supervised. Members never give medicine, never attempt treatment beyond what they have been taught, and always report injuries to a teacher. When members practise on one another, they do so gently, with permission and with respect for privacy. Equipment such as scissors is used only under supervision.</p>
+        </section>
+        <section>
+            <h2>Frequently asked questions</h2>
+            <h3>Do members treat injured pupils on their own?</h3>
+            <p>No. Members give simple first help for minor problems and call a teacher immediately. They do not replace nurses, doctors or other adults.</p>
+            <h3>Is the Red Cross a religious or political group?</h3>
+            <p>No. It is guided by the principles of impartiality and neutrality. It helps people according to their need and does not take sides in religion or politics.</p>
+            <h3>Is the club only for children who want to become nurses or doctors?</h3>
+            <p>No. The skills of first aid, hygiene and caring for others are useful to everyone, whatever job they choose later.</p>
+            <h3>Will the club take time away from lessons?</h3>
+            <p>The teacher in charge arranges meetings so that normal lessons are not disrupted. The club is a co-curricular activity, which means it supports learning but does not replace it.</p>
+            <h3>What will my child bring?</h3>
+            <p>A notebook and a pen are usually enough. Any special item, such as a badge or a small contribution for first-aid supplies, is explained by the teacher in charge.</p>
+            <h3>What does my child gain that shows at home?</h3>
+            <p>Parents often notice better hygiene habits, more helpfulness, and a calmer attitude when someone is hurt or upset.</p>
+        </section>
+            <p class="closing">The Red Cross club prepares pupils to be helpful, calm and compassionate. These qualities will serve them, their families and their communities for the rest of their lives.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

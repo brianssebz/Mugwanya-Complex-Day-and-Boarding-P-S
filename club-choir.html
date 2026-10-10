@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Choir | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="The school choir brings together pupils who love music to sing as one group. Members learn to use their voices correctly, to sing in harmony, to keep time...">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== CLUB ARTICLE PAGES ===== */
+        .club-article {
+            width: 100%;
+            max-width: 46rem;
+            text-align: left;
+        }
+
+        .article-head {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .club-icon {
+            flex: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .club-icon svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .club-article .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .club-article h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .club-article .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .club-article p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .club-article h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .club-article h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .club-article h3 {
+            color: #0d3b66;
+            font-size: 1.0625rem;
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .club-article ul,
+        .club-article ol {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .club-article li {
+            margin-bottom: 0.4rem;
+        }
+
+        .club-article li::marker {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .club-article .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 32%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .terms {
+            margin: 0 0 1rem;
+        }
+
+        .terms dt {
+            color: #0d3b66;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .terms dd {
+            margin: 0.15rem 0 0;
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .club-article .closing {
+            border-top: 2px solid #148eb3;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            color: #0d3b66;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .article-head {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="club-article">
+            <div class="article-head">
+                <div class="club-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                <div>
+                    <p class="kicker">School Clubs &amp; Movements</p>
+                    <h1>School Choir</h1>
+                    <p class="standfirst">Singing together: voices, rhythm and teamwork.</p>
+                </div>
+            </div>
+            <hr class="article-rule">
+            <p>The school choir brings together pupils who love music to sing as one group. Members learn to use their voices correctly, to sing in harmony, to keep time and to perform songs for an audience. The choir also keeps alive the songs of our country and our culture, and it adds beauty and joy to school events.</p>
+            <p>Our choir nurtures musical talent through choral singing, traditional dance and instrumental training. Members learn to express music with their voices, with their bodies and with their hands.</p>
+            <aside class="glance" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <dl>
+            <dt>Voice parts</dt>
+            <dd>Unison singing and two-part songs: soprano (higher voices) and alto (lower voices)</dd>
+            <dt>Kinds of songs</dt>
+            <dd>Hymns and gospel songs, patriotic songs, folk and traditional songs, action songs</dd>
+            <dt>Also taught</dt>
+            <dd>Traditional dance and basic instrument playing</dd>
+            <dt>Performs at</dt>
+            <dd>School assemblies and celebrations, parents’ days and Music, Dance and Drama (MDD) festivals</dd>
+            <dt>Led by</dt>
+            <dd>The teacher in charge of music</dd>
+                </dl>
+            </aside>
+        <section>
+            <h2>What the club aims to do</h2>
+            <ul>
+                <li>Teach correct singing, breathing and posture.</li>
+                <li>Develop a good sense of rhythm, pitch and harmony.</li>
+                <li>Preserve and share Uganda’s songs and dances.</li>
+                <li>Build confidence, discipline and teamwork through performance.</li>
+                <li>Bring joy and a sense of unity to the whole school community.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>A typical rehearsal</h2>
+            <ol>
+                <li>Members arrive on time, stand tall in their places and greet the teacher.</li>
+                <li>A physical warm-up loosens the shoulders and neck. Breathing exercises follow.</li>
+                <li>Voice warm-ups follow: humming, simple scales and vowel sounds.</li>
+                <li>The teacher teaches a new song line by line. Members listen, then repeat.</li>
+                <li>Voice parts practise separately and then sing together.</li>
+                <li>The choir polishes the song: clear words, correct timing and expression, with louder and softer passages.</li>
+                <li>Members practise how to enter, stand and bow or exit for a performance.</li>
+                <li>The teacher gives feedback, and members cool down with a gentle song.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Learning to sing well</h2>
+            <h3>Posture and breathing</h3>
+            <p>Singers stand tall with feet slightly apart, shoulders relaxed and chin level. They breathe low and slowly, filling the lower part of the lungs, so that the voice is steady and does not run out of breath.</p>
+            <h3>Clear words and good tone</h3>
+            <p>Members open their mouths properly, pronounce words clearly and keep the voice round and pleasant rather than shouting. A choir sounds good when the audience can understand every word.</p>
+            <h3>Listening and blending</h3>
+            <p>In a choir, no single voice should stand out. Members listen to those beside them and match the volume, speed and style, and they watch the conductor for signals to start, stop, get louder or get softer.</p>
+            <h3>Rhythm and pitch</h3>
+            <p>Clapping and tapping patterns teach a steady beat. Singing scales and echoing short tunes train the ear to match notes accurately.</p>
+        </section>
+        <section>
+            <h2>The songs the choir sings</h2>
+            <ul>
+                <li>Hymns and gospel songs.</li>
+                <li>Patriotic songs, including the national anthem, “Oh Uganda, Land of Beauty.”</li>
+                <li>Folk and traditional songs in English and in local languages.</li>
+                <li>Action songs for younger members, with simple movements.</li>
+                <li>Songs with messages about health, the environment, peace and good behaviour.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Traditional dance and instruments</h2>
+            <p>Members may learn traditional dances from different parts of Uganda. They study the steps, the rhythm and the costume, and they learn what each dance means and when it is performed. Dance trains rhythm, strength, balance and good manners on the stage.</p>
+            <p>Where instruments are available, members are introduced to drums of different sizes, which teach rhythm and listening, and to melodic instruments such as the keyboard, the recorder and traditional instruments, for example the amadinda (a log xylophone) or the endongo (a bowl lyre). Members learn to keep a steady beat and to play softly behind the singers.</p>
+        </section>
+        <section>
+            <h2>Performances and festivals</h2>
+            <p>The choir sings at morning assemblies, parents’ days, graduation and prize-giving ceremonies and other school celebrations. It also prepares for inter-school Music, Dance and Drama (MDD) festivals, where judges generally look at voice quality, accuracy, expression, discipline, costume and stage presence. Performing teaches members to stay calm in front of an audience and to work for a shared goal.</p>
+        </section>
+        <section>
+            <h2>Taking care of your voice</h2>
+            <ul>
+                <li>Drink water often, especially before and after singing.</li>
+                <li>Do not shout or scream, since this strains the voice.</li>
+                <li>Warm up the voice before singing.</li>
+                <li>Rest the voice when you have a sore throat or a cough, and tell the teacher.</li>
+                <li>Speak gently and sleep enough.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Skills and values pupils gain</h2>
+            <ul>
+                <li>Musical skills: rhythm, pitch, harmony and expression.</li>
+                <li>Teamwork, discipline and punctuality.</li>
+                <li>Memory and concentration.</li>
+                <li>Confidence on the stage.</li>
+                <li>Pride in our culture and respect for others’ talents.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Who can join, and how</h2>
+            <p>Pupils who love singing are welcome. The teacher in charge usually listens to each new member sing a short, simple song so as to place the child in the best voice part. This is not a test to keep anyone out. Good attendance, discipline and a willingness to learn matter more than a perfect voice.</p>
+            <p>For meeting days, times and any contributions, please ask the teacher in charge or the school office.</p>
+        </section>
+        <section>
+            <h2>Frequently asked questions</h2>
+            <h3>Does my child need to read music?</h3>
+            <p>No. Most songs are learned by listening and repeating. Simple music notation can be introduced slowly for interested members.</p>
+            <h3>My child is not a strong singer. Can he or she still join?</h3>
+            <p>Yes. Interest, effort and good behaviour are what count. Singing improves a great deal with practice.</p>
+            <h3>How often does the choir rehearse?</h3>
+            <p>The teacher in charge announces the rehearsal days and times, and these are communicated to parents. Regular attendance is important because the choir sings as one group.</p>
+            <h3>What will my child wear for performances?</h3>
+            <p>The teacher in charge explains any costume or uniform needed for each event. Costumes are kept simple.</p>
+            <h3>Will my shy child benefit?</h3>
+            <p>Yes. Singing in a group gives shy pupils a gentle way to perform, because they are supported by the voices around them.</p>
+        </section>
+            <p class="closing">In the choir, pupils discover that many voices working together can make something far more beautiful than one voice alone, and this is a lesson that goes well beyond music.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

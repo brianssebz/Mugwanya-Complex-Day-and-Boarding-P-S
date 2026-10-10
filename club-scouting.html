@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="Scouting is a worldwide youth movement that trains young people to become responsible, self-reliant and helpful citizens. It was started by Robert...">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== CLUB ARTICLE PAGES ===== */
+        .club-article {
+            width: 100%;
+            max-width: 46rem;
+            text-align: left;
+        }
+
+        .article-head {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .club-icon {
+            flex: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .club-icon svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .club-article .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .club-article h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .club-article .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .club-article p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .club-article h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .club-article h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .club-article h3 {
+            color: #0d3b66;
+            font-size: 1.0625rem;
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .club-article ul,
+        .club-article ol {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .club-article li {
+            margin-bottom: 0.4rem;
+        }
+
+        .club-article li::marker {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .club-article .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 32%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .terms {
+            margin: 0 0 1rem;
+        }
+
+        .terms dt {
+            color: #0d3b66;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .terms dd {
+            margin: 0.15rem 0 0;
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .club-article .closing {
+            border-top: 2px solid #148eb3;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            color: #0d3b66;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .article-head {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="club-article">
+            <div class="article-head">
+                <div class="club-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 12 4l9 16z"/><path d="M9.5 20 12 15l2.5 5"/></svg></div>
+                <div>
+                    <p class="kicker">School Clubs &amp; Movements</p>
+                    <h1>Scouting</h1>
+                    <p class="standfirst">Be prepared: discipline, survival skills and service.</p>
+                </div>
+            </div>
+            <hr class="article-rule">
+            <p>Scouting is a worldwide youth movement that trains young people to become responsible, self-reliant and helpful citizens. It was started by Robert Baden-Powell, a British army officer, who held an experimental camp for boys on Brownsea Island in 1907 and then wrote the book <i>Scouting for Boys</i> in 1908. Today millions of young people in over 150 countries are Scouts, including in Uganda, where the movement is organised by the Uganda Scouts Association.</p>
+            <p>In our school, the Scouting group teaches pupils practical outdoor skills, discipline, leadership and a spirit of community service. Members learn by doing: they tie knots, pitch tents, read maps, learn how to help in emergencies and carry out a “good turn” for someone every day.</p>
+            <aside class="glance" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <dl>
+            <dt>Founder</dt>
+            <dd>Robert Baden-Powell</dd>
+            <dt>Motto</dt>
+            <dd>Be Prepared</dd>
+            <dt>Uganda body</dt>
+            <dd>Uganda Scouts Association</dd>
+            <dt>Scout sign</dt>
+            <dd>Three fingers raised when making the promise</dd>
+            <dt>Scout handshake</dt>
+            <dd>Given with the left hand</dd>
+            <dt>How members learn</dt>
+            <dd>By doing, in small teams called patrols</dd>
+                </dl>
+            </aside>
+        <section>
+            <h2>What the club aims to do</h2>
+            <ul>
+                <li>Build discipline, obedience, honesty and good manners.</li>
+                <li>Teach practical outdoor and survival skills.</li>
+                <li>Develop leadership by giving every member a chance to lead and to follow.</li>
+                <li>Encourage service to the school, the community and the country.</li>
+                <li>Promote fitness, teamwork, courage and love of nature.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>The Scout Promise and Law</h2>
+            <p>Scouts make a promise to do their best, to help other people at all times and to obey the Scout Law. The Scout Law describes the character of a Scout, someone who is trustworthy, loyal, helpful, friendly, courteous, kind, cheerful, careful with property, and clean in thought, word and action. Members try to live by these ideas at school and at home, not only at meetings.</p>
+        </section>
+        <section>
+            <h2>What members do</h2>
+            <h3>Skills for the outdoors</h3>
+            <ul>
+                <li>Tying and using knots, such as the reef knot, the clove hitch and the bowline, and learning when each one is used.</li>
+                <li>Pitching and packing tents and caring for camp equipment.</li>
+                <li>Reading simple maps, using a compass and finding direction from the sun.</li>
+                <li>Building a safe cooking fire, following fire-safety rules, and cooking simple outdoor meals.</li>
+                <li>Signalling with flags, whistles and torches, and learning how to call for help.</li>
+                <li>Learning basic first aid, tracking, and how to avoid getting lost.</li>
+            </ul>
+            <h3>Parade and teamwork</h3>
+            <ul>
+                <li>Drill and marching, which teach attention, order and working as one body.</li>
+                <li>Flag-raising ceremonies and inspection of uniform.</li>
+                <li>Working in patrols, each with a patrol leader who plans the work and encourages the others.</li>
+                <li>Pioneering projects, in which the group builds useful structures from poles and rope.</li>
+                <li>Games and hikes that build fitness and team spirit.</li>
+            </ul>
+            <h3>Service to others</h3>
+            <ul>
+                <li>The daily good turn: every Scout tries to do at least one helpful act each day without being paid or thanked.</li>
+                <li>Cleaning the school compound and planting trees.</li>
+                <li>Helping to guide visitors, control queues and keep order at school events.</li>
+                <li>Visiting and helping the elderly or the sick.</li>
+            </ul>
+            <h3>Badges and progress</h3>
+            <p>Members earn badges for skills such as knotting, first aid, camping, cooking and community service. A leader tests the skill, and the badge is awarded when the member shows that he or she can do it properly. This gives every member clear goals and a way to see progress.</p>
+        </section>
+        <section>
+            <h2>A typical meeting</h2>
+            <ol>
+                <li>Members fall in by patrol, and the leader inspects uniform and neatness.</li>
+                <li>The flag ceremony is held and the Scout Promise is repeated.</li>
+                <li>The leader teaches or revises a skill, such as a knot or reading a compass.</li>
+                <li>Patrols practise the skill in a competition or a practical task.</li>
+                <li>A game or drill session follows to release energy and build teamwork.</li>
+                <li>The group plans a good turn or service project.</li>
+                <li>The meeting closes, and members tidy the place where they have worked.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Camps and outings</h2>
+            <p>Hikes and camps are the highlight of Scouting. They are planned well in advance. Parents or guardians are informed and give permission, a list of what to carry is given to each member, a first-aid kit goes with the group, and adult leaders supervise at all times. Day outings and short camps come first; any overnight camp is arranged only with the agreement of the school and parents, and members must be properly prepared.</p>
+        </section>
+        <section>
+            <h2>Skills and values pupils gain</h2>
+            <ul>
+                <li>Self-reliance, which means being able to look after oneself and one’s belongings.</li>
+                <li>Discipline, punctuality and respect for leaders and for others.</li>
+                <li>Leadership and the ability to work in a team.</li>
+                <li>Practical knowledge that is useful in everyday life.</li>
+                <li>Courage, perseverance and a habit of service.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Who can join, and how</h2>
+            <p>Interested pupils may ask to join. Parents or guardians are informed, and the teacher in charge explains what members need, such as uniform items. Members are placed in patrols so that every child has a small team to belong to.</p>
+            <p>For meeting days, times and any contributions, please ask the teacher in charge or the school office.</p>
+        </section>
+        <section>
+            <h2>Safety and discipline</h2>
+            <p>Fire, tools and ropes are used only under adult supervision. Members follow the buddy rule: no one goes anywhere alone, and everyone looks out for a partner. Members respect one another, wear their uniform neatly and follow the instructions of their leaders. Bullying and unsafe behaviour are not allowed.</p>
+        </section>
+        <section>
+            <h2>Frequently asked questions</h2>
+            <h3>Is Scouting military training?</h3>
+            <p>No. Drill and uniform are used to teach order, teamwork and respect, but Scouting is a youth education movement. It aims to make helpful, responsible citizens, not soldiers.</p>
+            <h3>Must my child sleep away from home?</h3>
+            <p>No. Overnight camps are not compulsory. Any outing or camp needs the permission of parents or guardians, and day activities are available for those who do not take part in camps.</p>
+            <h3>What will my child learn that helps at home?</h3>
+            <p>Tying knots, cooking, first aid, keeping things tidy, helping neighbours and managing time are all practised and are useful at home.</p>
+            <h3>Will my child need a uniform?</h3>
+            <p>Members may be asked to wear Scout uniform on activity days. The teacher in charge explains exactly what is needed and when.</p>
+            <h3>Does Scouting affect school work?</h3>
+            <p>Meetings are arranged so that lessons are not disrupted. The discipline, organisation and confidence that Scouts gain often help pupils in their studies.</p>
+        </section>
+            <p class="closing">Scouting helps pupils grow into capable, disciplined and caring young people who are ready for whatever life asks of them, which is exactly what its motto, Be Prepared, means.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

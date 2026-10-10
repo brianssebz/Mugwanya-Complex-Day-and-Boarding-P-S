@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLE Performance | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="Primary Leaving Examination (PLE) results of St. John Paul Mugwanya Complex over the last 20 years: first, second and third grades, with numbers and percentages.">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== PLE PERFORMANCE PAGE ===== */
+        .ple-page {
+            width: 100%;
+            max-width: 64rem;
+            text-align: left;
+        }
+
+        .ple-page .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .ple-page h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .ple-page .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .ple-page p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .ple-page h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .ple-page h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .ple-page ul {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .ple-page li::marker {
+            color: #148eb3;
+        }
+
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            background-color: #fff;
+        }
+
+        .ple-table {
+            width: 100%;
+            min-width: 46rem;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .ple-table caption {
+            caption-side: top;
+            padding: 0.75rem 1rem;
+            background-color: #f7f3e9;
+            color: #0d3b66;
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 2px solid #148eb3;
+        }
+
+        .ple-table th,
+        .ple-table td {
+            padding: 0.6rem 0.5rem;
+            border: 1px solid #c9d6de;
+        }
+
+        .ple-table thead th {
+            background-color: #0d3b66;
+            color: #fff;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .ple-table thead th small {
+            display: block;
+            font-weight: normal;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .ple-table thead tr:nth-child(2) th {
+            background-color: #148eb3;
+        }
+
+        .ple-table tbody tr:nth-child(even) {
+            background-color: #f7f3e9;
+        }
+
+        .ple-table tbody th {
+            background-color: #eef4f7;
+            color: #0d3b66;
+        }
+
+        .ple-table tbody tr:nth-child(even) th {
+            background-color: #e3edf2;
+        }
+
+        .ple-table th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+            min-width: 4.5rem;
+        }
+
+        .ple-table .empty {
+            color: #8a8a8a;
+        }
+
+        .ple-table tfoot td,
+        .ple-table tfoot th {
+            background-color: #f7f3e9;
+            font-weight: bold;
+            color: #0d3b66;
+            border-top: 2px solid #0d3b66;
+        }
+
+        .table-hint {
+            display: none;
+            font-size: 0.85rem;
+            color: #555;
+            margin: 0.5rem 0 0;
+        }
+
+        .grading {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        .grading th,
+        .grading td {
+            padding: 0.6rem 0.9rem;
+            border: 1px solid #c9d6de;
+        }
+
+        .grading th {
+            background-color: #0d3b66;
+            color: #fff;
+        }
+
+        .grading tbody tr:nth-child(even) {
+            background-color: #f7f3e9;
+        }
+
+        .note-box {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .note-box p {
+            margin: 0;
+        }
+
+        @media (max-width: 800px) {
+            .table-hint {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="ple-page">
+            <p class="kicker">Academics</p>
+            <h1>PLE Performance</h1>
+            <p class="standfirst">Our results in the Primary Leaving Examination over the last 20 years.</p>
+            <hr class="article-rule">
+
+            <p>The Primary Leaving Examination (PLE) is the national examination taken at the end of Primary Seven. It is set and marked by the Uganda National Examinations Board (UNEB). It tests four subjects: English, Mathematics, Science and Social Studies. A pupil&rsquo;s results are summed up as a division, from Division 1 (the best) down to Division 4, or Ungraded.</p>
+            <p>The table below shows, for each year from 2006 to 2025, how many of our candidates passed in the first, second and third grades (Divisions 1, 2 and 3), together with the percentage of all candidates that this number represents.</p>
+
+            <h2>Results by year</h2>
+            <div class="table-wrap" role="region" aria-label="PLE results by year, scrollable" tabindex="0">
+                <table class="ple-table">
+                    <caption>PLE results of St. John Paul Mugwanya Complex, 2006 to 2025</caption>
+                    <colgroup><col style="width: 8%"><col style="width: 12%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"><col style="width: 10%"></colgroup>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" scope="col">Year</th>
+                            <th rowspan="2" scope="col">Candidates</th>
+                            <th colspan="2" scope="colgroup">First grade<small>Division 1</small></th>
+                            <th colspan="2" scope="colgroup">Second grade<small>Division 2</small></th>
+                            <th colspan="2" scope="colgroup">Third grade<small>Division 3</small></th>
+                            <th colspan="2" scope="colgroup">Fourth grade and ungraded<small>Division 4 and U</small></th>
+                        </tr>
+                        <tr>
+                            <th scope="col">No.</th><th scope="col">%</th>
+                            <th scope="col">No.</th><th scope="col">%</th>
+                            <th scope="col">No.</th><th scope="col">%</th>
+                            <th scope="col">No.</th><th scope="col">%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr><th scope="row">2025</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2024</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2023</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2022</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2021</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2020</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2019</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2018</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2017</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2016</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2015</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2014</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2013</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2012</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2011</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2010</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2009</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2008</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2007</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    <tr><th scope="row">2006</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    </tbody>
+                    <tfoot>
+                    <tr><th scope="row">Total</th><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td><td class="empty">&mdash;</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p class="table-hint">Swipe the table sideways to see all columns.</p>
+
+            <h2>How to read the table</h2>
+            <ul>
+                <li><b>Candidates</b> is the total number of Primary Seven pupils of our school who sat the PLE that year.</li>
+                <li><b>No.</b> is the number of candidates who obtained that division.</li>
+                <li><b>%</b> is the share of all candidates that this number represents. It is worked out as the number in the division, divided by the total candidates, multiplied by 100.</li>
+            </ul>
+            <div class="note-box">
+                <p><b>Example:</b> if 40 candidates sat the examination and 12 obtained Division 1, then the Division 1 percentage is 12 &divide; 40 &times; 100 = 30%.</p>
+            </div>
+
+            <h2>How divisions are decided</h2>
+            <p>In each of the four subjects a pupil receives a grade from 1 (best) to 9. The four grades are added together to give an aggregate, which can be as low as 4 and as high as 36. The lower the aggregate, the better the result. The aggregate decides the division:</p>
+            <table class="grading">
+                <thead>
+                    <tr><th scope="col">Division</th><th scope="col">Aggregate</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Division 1 (first grade)</td><td>4 to 12</td></tr>
+                    <tr><td>Division 2 (second grade)</td><td>13 to 23</td></tr>
+                    <tr><td>Division 3 (third grade)</td><td>24 to 29</td></tr>
+                    <tr><td>Division 4 (fourth grade)</td><td>30 to 34</td></tr>
+                    <tr><td>Ungraded (U)</td><td>35 to 36</td></tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Club | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="The Wildlife Club teaches pupils to know, enjoy and protect the plants, animals and places around us. Uganda is home to a remarkable variety of wildlife,...">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== CLUB ARTICLE PAGES ===== */
+        .club-article {
+            width: 100%;
+            max-width: 46rem;
+            text-align: left;
+        }
+
+        .article-head {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .club-icon {
+            flex: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .club-icon svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .club-article .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .club-article h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .club-article .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .article-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .club-article p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .club-article h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.25rem 0 0.75rem;
+        }
+
+        .club-article h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .club-article h3 {
+            color: #0d3b66;
+            font-size: 1.0625rem;
+            margin: 1.25rem 0 0.4rem;
+        }
+
+        .club-article ul,
+        .club-article ol {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .club-article li {
+            margin-bottom: 0.4rem;
+        }
+
+        .club-article li::marker {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .club-article .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 32%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .terms {
+            margin: 0 0 1rem;
+        }
+
+        .terms dt {
+            color: #0d3b66;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .terms dd {
+            margin: 0.15rem 0 0;
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.65;
+        }
+
+        .club-article .closing {
+            border-top: 2px solid #148eb3;
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            color: #0d3b66;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .article-head {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <article class="club-article">
+            <div class="article-head">
+                <div class="club-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                <div>
+                    <p class="kicker">School Clubs &amp; Movements</p>
+                    <h1>Wildlife Club</h1>
+                    <p class="standfirst">Caring for nature, today and for the future.</p>
+                </div>
+            </div>
+            <hr class="article-rule">
+            <p>The Wildlife Club teaches pupils to know, enjoy and protect the plants, animals and places around us. Uganda is home to a remarkable variety of wildlife, from mountain gorillas and chimpanzees to elephants, lions, hippos and antelopes, and more than a thousand kinds of birds. These animals, and the forests, wetlands and grasslands where they live, are part of our national heritage.</p>
+            <p>The club helps pupils understand why nature matters and what each of us can do to protect it, starting with our own school compound. It promotes environmental conservation, appreciation of nature and eco-friendly habits.</p>
+            <aside class="glance" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <dl>
+            <dt>Focus</dt>
+            <dd>Wildlife, trees, wetlands, waste and a clean school environment</dd>
+            <dt>National bird</dt>
+            <dd>The grey crowned crane, also called the crested crane, which appears on the national flag</dd>
+            <dt>National emblem</dt>
+            <dd>The Uganda kob and the crested crane appear on the coat of arms</dd>
+            <dt>Important days</dt>
+            <dd>World Wetlands Day (2 February), World Wildlife Day (3 March), World Environment Day (5 June)</dd>
+            <dt>Where it happens</dt>
+            <dd>The school compound, the school garden, nearby nature walks and educational trips when arranged</dd>
+                </dl>
+            </aside>
+        <section>
+            <h2>What the club aims to do</h2>
+            <ul>
+                <li>Teach pupils about the animals, plants and habitats of Uganda.</li>
+                <li>Encourage care for trees, water, soil and the school environment.</li>
+                <li>Build healthy, eco-friendly habits such as reducing, reusing and recycling.</li>
+                <li>Prepare pupils to be responsible guardians of the environment.</li>
+                <li>Share conservation messages with families and the community.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Why conservation matters</h2>
+            <p>Wildlife and the environment support our lives in many ways. Forests and wetlands help to bring rain, clean the air and water and protect the soil. Bees, birds and insects carry pollen and help crops and fruit trees to grow. Every animal and plant has a place in the food chain, so losing one can upset the balance of nature. Tourism that is based on wildlife also earns income for the country and provides jobs.</p>
+            <p>Nature faces many threats. Members learn about the most common ones:</p>
+            <ul>
+                <li>Cutting down trees and clearing forests.</li>
+                <li>Draining and destroying wetlands.</li>
+                <li>Poaching, which is illegal hunting of wild animals.</li>
+                <li>Bush burning.</li>
+                <li>Pollution, including plastic litter.</li>
+                <li>Conflict between people and wild animals when homes and habitats overlap.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>What members do</h2>
+            <h3>Caring for the school environment</h3>
+            <ul>
+                <li>Planting trees, flowers and hedges, and running a small tree nursery. Members collect seeds, fill pots, water seedlings and transplant them at the start of the rains.</li>
+                <li>Looking after the school garden and flower beds.</li>
+                <li>Organising regular clean-ups of the compound.</li>
+                <li>Sorting waste, reusing containers and making compost from leaves and food waste.</li>
+                <li>Saving water by closing taps and collecting rainwater where possible.</li>
+                <li>Saving energy by switching off lights and using firewood and charcoal carefully.</li>
+            </ul>
+            <h3>Learning about nature</h3>
+            <ul>
+                <li>Nature walks to observe birds, insects, trees and plants.</li>
+                <li>Keeping a nature notebook where members record what they saw, where and when, with drawings.</li>
+                <li>Simple counts, such as how many kinds of birds visit the compound over several weeks.</li>
+                <li>Wildlife quizzes, pictures and videos.</li>
+                <li>Talks from visitors such as environment officers or rangers, when these can be arranged.</li>
+            </ul>
+            <h3>Awareness and action</h3>
+            <ul>
+                <li>Making posters, songs, poems and short dramas about the environment.</li>
+                <li>Presenting messages at assembly.</li>
+                <li>Marking environment days such as World Environment Day.</li>
+                <li>Sharing messages with families, such as avoiding bush burning, protecting wetlands and not littering.</li>
+            </ul>
+            <h3>Educational trips</h3>
+            <p>When the school arranges them and parents give permission, members may visit places such as the Uganda Wildlife Education Centre in Entebbe, a national park or a nearby wetland or forest to see wildlife and conservation in action.</p>
+        </section>
+        <section>
+            <h2>A typical meeting</h2>
+            <ol>
+                <li>Members gather and the leader explains the day’s activity and safety rules.</li>
+                <li>The group collects tools, such as gloves, hoes, watering cans or notebooks.</li>
+                <li>Members carry out the activity, such as planting seedlings, cleaning an area or observing birds.</li>
+                <li>The group shares what they saw, learned or achieved.</li>
+                <li>Members wash their hands and return the tools.</li>
+                <li>The leader sets a task for next time, such as bringing a plastic bottle for reuse or looking for a bird at home.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Staying safe outdoors</h2>
+            <ul>
+                <li>Wear closed shoes and, when needed, a hat. Carry drinking water.</li>
+                <li>Stay with the group and listen to the leader.</li>
+                <li>Never touch, chase or feed wild animals. If you see a snake or an unfamiliar animal, move away calmly and tell the leader.</li>
+                <li>Do not eat unknown fruits, berries or leaves.</li>
+                <li>Use tools only when the teacher says so, and carry them carefully.</li>
+                <li>Wear gloves when handling litter, and wash hands with soap afterwards.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>What pupils can do at home</h2>
+            <ul>
+                <li>Plant and water a tree or a few vegetables.</li>
+                <li>Put litter in a bin, not on the ground.</li>
+                <li>Reuse containers, bags and bottles.</li>
+                <li>Switch off lights and fetch only the water needed.</li>
+                <li>Never burn plastic, and tell family members why this harms health and nature.</li>
+                <li>Treat pets and farm animals kindly.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Skills and values pupils gain</h2>
+            <ul>
+                <li>Observation, recording and curiosity about the natural world.</li>
+                <li>Practical gardening and environmental skills.</li>
+                <li>Responsibility for the school and community environment.</li>
+                <li>Teamwork and leadership.</li>
+                <li>Respect for all living things.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Who can join, and how</h2>
+            <p>Any interested pupil may join. Members do not have to know much about animals; they only need to be willing to learn and to work. The teacher in charge explains what to wear and bring for outdoor days.</p>
+            <p>For meeting days, times and any contributions, please ask the teacher in charge or the school office.</p>
+        </section>
+        <section>
+            <h2>Frequently asked questions</h2>
+            <h3>Does my child have to love animals to join?</h3>
+            <p>No. Interest in nature, trees, water and keeping places clean is enough. The club helps pupils to learn to appreciate living things.</p>
+            <h3>Is the club only outdoors?</h3>
+            <p>Most activities are outdoors, but members also learn through pictures, talks, posters, songs and discussions in the classroom.</p>
+            <h3>Is it safe?</h3>
+            <p>Yes. Activities are supervised and safety rules are explained before each one. Members do not handle wild animals or dangerous tools.</p>
+            <h3>How does it link with school lessons?</h3>
+            <p>It supports science and social studies topics such as plants, animals, habitats, soil, water and caring for our surroundings.</p>
+            <h3>What should my child bring?</h3>
+            <p>Closed shoes and drinking water are important. The teacher in charge explains if anything else is needed, such as old clothes for gardening days.</p>
+        </section>
+            <p class="closing">The Wildlife Club helps pupils to see themselves as caretakers of the natural world. The habits they learn now will help to keep Uganda green, clean and rich in wildlife for the future.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

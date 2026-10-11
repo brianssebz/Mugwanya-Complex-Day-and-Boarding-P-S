@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="About St. John Paul Mugwanya Complex Day and Boarding Primary School in Masaka District: our story, mission, vision, values and location.">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== SHARED STYLES FOR THE INFORMATION PAGES ===== */
+        .site-page {
+            width: 100%;
+            max-width: 64rem;
+            text-align: left;
+        }
+
+        .site-page .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .site-page h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .site-page .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .page-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .site-page p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .site-page h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.5rem 0 0.75rem;
+        }
+
+        .site-page h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .site-page ul {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .site-page li {
+            margin-bottom: 0.35rem;
+        }
+
+        .site-page li::marker {
+            color: #148eb3;
+        }
+
+        .site-page a {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .site-page a:hover {
+            color: #0d3b66;
+        }
+
+        .ic {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex: none;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .site-page .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 28%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            gap: 1.25rem;
+            margin: 0 0 1rem;
+        }
+
+        .info-card {
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-page .info-card h3 {
+            color: #0d3b66;
+            font-size: 1.15rem;
+            line-height: 1.3;
+            margin: 0.75rem 0 0.4rem;
+        }
+
+        .site-page .info-card p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 0.6rem;
+        }
+
+        .site-page .info-card ul {
+            font-size: 0.97rem;
+            line-height: 1.55;
+            margin: 0.4rem 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .statement {
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-left-width: 0.5rem;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .site-page .statement h3 {
+            color: #0d3b66;
+            font-size: 1.2rem;
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .statement .ic {
+            color: #148eb3;
+        }
+
+        .site-page .statement p {
+            margin: 0;
+        }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem;
+        }
+
+        .site-page .chip-list li {
+            margin: 0;
+        }
+
+        .site-page .chip-list a {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-radius: 50rem;
+            color: #0d3b66;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .site-page .chip-list a:hover {
+            background-color: #148eb3;
+            color: #fff;
+        }
+
+        .site-page .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.5rem;
+            background-color: #148eb3;
+            color: #fff;
+            border: 2px solid #148eb3;
+            border-radius: 50rem;
+            font: inherit;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .site-page .btn:hover {
+            background-color: #0d3b66;
+            border-color: #0d3b66;
+            color: #fff;
+        }
+
+        .site-page .btn-outline {
+            background-color: transparent;
+            color: #0d3b66;
+            border-color: #0d3b66;
+        }
+
+        .site-page .btn-outline:hover {
+            background-color: #0d3b66;
+            color: #fff;
+        }
+
+        .site-page .btn:focus-visible {
+            outline: 3px solid #0d3b66;
+            outline-offset: 3px;
+        }
+
+        .cta-box {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .site-page .cta-box h2 {
+            margin: 0 0 0.5rem;
+        }
+
+        .site-page .cta-box h2::before {
+            display: none;
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+
+            .card-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .site-page .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+           <li><a href="./ple-performance.html">PLE Performance</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="./Services of Mugwanya.html">Our Services</a></li>
+<li><a href="./About Mugwanya.html">About Us</a></li>
+<li><a href="./Contacts Mugwanya.html">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <div class="site-page">
+            <p class="kicker">About Us</p>
+            <h1>About St. John Paul Mugwanya Complex</h1>
+            <p class="standfirst">Education for Quality Life</p>
+            <hr class="page-rule">
+            <p>St. John Paul Mugwanya Complex Day and Boarding Primary School is a school in Masaka District, Uganda, that was started by local volunteers and teachers to give vulnerable, orphaned and disadvantaged children a chance to learn. Today it serves hundreds of pupils as both a day and a boarding school.</p>
+            <p>This page tells the story of the school, what it stands for, where it is, and what life is like for the children who learn here.</p>
+
+            <aside class="glance" aria-label="School at a glance">
+                <h2>The school at a glance</h2>
+                <dl>
+                    <dt>Full name</dt><dd>St. John Paul Mugwanya Complex Day and Boarding Primary School</dd>
+                    <dt>Type</dt><dd>Day and boarding primary school</dd>
+                    <dt>Classes</dt><dd>Nursery to Primary Seven</dd>
+                    <dt>Motto</dt><dd>Education for Quality Life</dd>
+                    <dt>Location</dt><dd>Ssaza Road, Katwe-Butego Sub-County, Masaka District, Uganda</dd>
+                    <dt>Distance</dt><dd>About 87 miles from Kampala</dd>
+                    <dt>National examination</dt><dd>Primary Leaving Examination (P.L.E.) in Primary Seven</dd>
+                </dl>
+            </aside>
+
+            <h2>Our story</h2>
+            <p>The school was founded by local volunteers and teachers who saw children in their own community who needed support: children who had lost parents, children who were vulnerable, and children from disadvantaged homes. They believed that every child, whatever their background, deserves the chance to learn, to grow and to build a good future.</p>
+            <p>That purpose still guides the school. It works as both a day school and a boarding school and serves hundreds of pupils, from the youngest children in Nursery to the Primary Seven class that sits the Primary Leaving Examination. It remains committed to care for every child, an inclusive classroom and good teaching.</p>
+
+            <h2>Our mission and vision</h2>
+            <div class="two-col">
+                <div class="statement">
+                    <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Mission</h3>
+                    <p>To deliver a high-quality, inclusive primary education that inspires a lifelong love of learning and critical thinking.</p>
+                </div>
+                <div class="statement">
+                    <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/><circle cx="12" cy="12" r="3"/></svg> Vision</h3>
+                    <p>To be a leading primary school known for academic excellence, dedicated teachers, and well-rounded students.</p>
+                </div>
+            </div>
+
+            <h2>What guides us: head, heart and hand</h2>
+            <p>We want to train our children to become self-reliant leaders in their communities. We give them a conducive environment in which to pursue excellence, in both academic and practical skills, where the rights and needs of children are met and protected. Our approach rests on three ideas.</p>
+            <div class="card-grid">
+                <div class="info-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+                    <h3>Head</h3>
+                    <p>We train the minds of our children by providing formal education, from the first reading lessons to the Primary Leaving Examination.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></div>
+                    <h3>Heart</h3>
+                    <p>We train the hearts of our children and build a moral bank in the hearts of learners, so that they grow in honesty, respect and kindness.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v1"/><path d="M14 10V4a2 2 0 0 0-4 0v2"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4L3.4 16a2 2 0 0 1 3.2-2.4L8 15"/></svg></div>
+                    <h3>Hand</h3>
+                    <p>We train the body of each child through co-curricular activities such as music, dance and drama, sports, creative modelling, weaving and agriculture.</p>
+                </div>
+            </div>
+
+            <h2>Who we serve and how we care</h2>
+            <ul>
+                <li>Children from the local community, including those who are orphaned, vulnerable or from disadvantaged backgrounds, were the reason the school was founded.</li>
+                <li>Day scholars attend school each day and go home in the evening. Boarding scholars live at school, where their accommodation, meals and supervision are provided.</li>
+                <li>Teachers are dedicated to helping every child to learn, whatever his or her starting point.</li>
+                <li>The rights and needs of children are met and protected, in the classroom, in the dormitory and on the playground.</li>
+            </ul>
+
+            <h2>Life beyond the classroom</h2>
+            <p>Learning at Mugwanya Complex does not stop when the lesson ends. Pupils can join clubs and movements that build skills, character and friendships. Each one has its own page that explains what members do.</p>
+            <ul class="chip-list">
+                <li><a href="./club-red-cross.html">Red Cross</a></li>
+                <li><a href="./club-scouting.html">Scouting</a></li>
+                <li><a href="./club-girl-guides.html">Girl Guides</a></li>
+                <li><a href="./club-debating.html">Debating Club</a></li>
+                <li><a href="./club-choir.html">School Choir</a></li>
+                <li><a href="./club-drama.html">Drama Club</a></li>
+                <li><a href="./club-scripture-union.html">Scripture Union</a></li>
+                <li><a href="./club-wildlife.html">Wildlife Club</a></li>
+            </ul>
+
+            <h2>Where to find us</h2>
+            <p>The school is on Ssaza Road in Katwe-Butego Sub-County, Masaka District, about 87 miles from Kampala. Visitors are welcome. The Contact page has the school&rsquo;s telephone numbers, email address, postal address and a map.</p>
+
+            <div class="cta-box">
+                <h2>Visit us or join us</h2>
+                <p>Come and see the school for yourself, or start an application for your child today.</p>
+                <div class="btn-row">
+                    <a class="btn" href="./Application Form.html">Apply now</a>
+                    <a class="btn btn-outline" href="./Contacts Mugwanya.html">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>

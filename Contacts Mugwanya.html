@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts and Feedback | St. John Paul Mugwanya Complex School</title>
+    <meta name="description" content="Contact St. John Paul Mugwanya Complex: email, telephone, WhatsApp, postal address, feedback form and map.">
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        @media (min-width: 1800px) {
+            html {
+                font-size: 125%;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            html {
+                font-size: 160%;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav summary {
+            font-weight: bold;
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown details[open] .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 12px 16px;
+            color: #333;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+        }
+
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+
+        body {
+            border: 1.25rem solid #148eb3;
+            min-height: 100%;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.25rem 2.5rem;
+            background-color: antiquewhite;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1.875rem;
+            gap: 6.25rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 3.75rem;
+        }
+
+        .school-logo {
+            width: 6.25rem;
+            height: 6.25rem;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 1.875rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0d3b66;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #148eb3;
+        }
+
+        nav .dropdown {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .dropdown > a {
+            padding-right: 0.25rem;
+        }
+
+        nav .dropdown summary {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0.75rem 1rem 0.25rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        nav .dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        nav .dropdown summary::after {
+            content: "";
+            display: inline-block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            transform: rotate(45deg);
+            margin-top: -0.25rem;
+            transition: transform 0.2s ease, border-color 0.3s ease;
+        }
+
+        nav .dropdown summary:hover::after {
+            border-color: #148eb3;
+        }
+
+        nav .dropdown details[open] summary::after {
+            transform: rotate(225deg);
+            margin-top: 0.25rem;
+        }
+
+        nav .dropdown summary:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: -3px;
+            border-radius: 0.5rem;
+        }
+
+        .dropdown .dropdown-content {
+            top: 100%;
+            left: 0;
+        }
+
+        nav li.apply-item {
+            align-self: center;
+        }
+
+        nav a.apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            background: linear-gradient(135deg, #ff9f1c, #ffc857);
+            color: #0d3b66;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0.25rem 0 #c97a00, 0 0.5rem 0.875rem rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease;
+            animation: applyPulse 2.5s ease-out infinite;
+        }
+
+        nav a.apply-btn svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        nav a.apply-btn:hover {
+            background: #0d3b66;
+            color: #fff;
+            transform: translateY(0.125rem);
+            box-shadow: 0 0.125rem 0 #06213d, 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+        }
+
+        nav a.apply-btn:hover svg {
+            transform: translateX(0.25rem);
+        }
+
+        nav a.apply-btn:focus-visible {
+            outline: 3px solid #148eb3;
+            outline-offset: 3px;
+        }
+
+        @keyframes applyPulse {
+            0% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0.55); }
+            70% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0.9rem rgba(255,159,28,0); }
+            100% { box-shadow: 0 0.25rem 0 #c97a00, 0 0 0 0 rgba(255,159,28,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav a.apply-btn {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            header {
+                gap: 1.25rem 2rem;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.875rem;
+            flex: 1;
+        }
+
+        .contact-info {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #148eb3;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            background-color: antiquewhite;
+            border-top: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 0.3125rem 0;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 1000px) {
+            header {
+                gap: 1.25rem 1.875rem;
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-section {
+                gap: 1.875rem;
+            }
+        }
+
+        @media (max-width: 800px) {
+            main {
+                padding: 1.5rem 1.25rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.25rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 0.9375rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            body {
+                border-width: 0.625rem;
+                padding: 0.625rem;
+            }
+
+            main {
+                padding: 1.25rem 0.75rem;
+            }
+        }
+
+        /* ===== SHARED STYLES FOR THE INFORMATION PAGES ===== */
+        .site-page {
+            width: 100%;
+            max-width: 64rem;
+            text-align: left;
+        }
+
+        .site-page .kicker {
+            color: #148eb3;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 0.25rem;
+        }
+
+        .site-page h1 {
+            color: #0d3b66;
+            font-size: clamp(1.6rem, 5vw, 2.25rem);
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        .site-page .standfirst {
+            font-style: italic;
+            color: #148eb3;
+            font-size: 1.125rem;
+            line-height: 1.4;
+            margin: 0.5rem 0 0;
+        }
+
+        .page-rule {
+            border: 0;
+            border-top: 2px solid #148eb3;
+            margin: 1.5rem 0;
+        }
+
+        .site-page p {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+
+        .site-page h2 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            margin: 2.5rem 0 0.75rem;
+        }
+
+        .site-page h2::before {
+            content: "";
+            display: inline-block;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-right: 0.6rem;
+            background-color: #148eb3;
+            border-radius: 0.1rem;
+            vertical-align: middle;
+        }
+
+        .site-page ul {
+            color: #333;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .site-page li {
+            margin-bottom: 0.35rem;
+        }
+
+        .site-page li::marker {
+            color: #148eb3;
+        }
+
+        .site-page a {
+            color: #148eb3;
+            font-weight: bold;
+        }
+
+        .site-page a:hover {
+            color: #0d3b66;
+        }
+
+        .ic {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex: none;
+        }
+
+        .glance {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .site-page .glance h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0.9rem;
+        }
+
+        .glance dl {
+            display: grid;
+            grid-template-columns: minmax(8rem, 28%) 1fr;
+            gap: 0.6rem 1rem;
+            margin: 0;
+        }
+
+        .glance dt {
+            color: #148eb3;
+            font-weight: bold;
+            line-height: 1.55;
+        }
+
+        .glance dd {
+            margin: 0;
+            color: #333;
+            line-height: 1.55;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            gap: 1.25rem;
+            margin: 0 0 1rem;
+        }
+
+        .info-card {
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #148eb3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site-page .info-card h3 {
+            color: #0d3b66;
+            font-size: 1.15rem;
+            line-height: 1.3;
+            margin: 0.75rem 0 0.4rem;
+        }
+
+        .site-page .info-card p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 0.6rem;
+        }
+
+        .site-page .info-card ul {
+            font-size: 0.97rem;
+            line-height: 1.55;
+            margin: 0.4rem 0 0;
+            padding-left: 1.25rem;
+        }
+
+        .statement {
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-left-width: 0.5rem;
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .site-page .statement h3 {
+            color: #0d3b66;
+            font-size: 1.2rem;
+            margin: 0 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .statement .ic {
+            color: #148eb3;
+        }
+
+        .site-page .statement p {
+            margin: 0;
+        }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem;
+        }
+
+        .site-page .chip-list li {
+            margin: 0;
+        }
+
+        .site-page .chip-list a {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-radius: 50rem;
+            color: #0d3b66;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .site-page .chip-list a:hover {
+            background-color: #148eb3;
+            color: #fff;
+        }
+
+        .site-page .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.5rem;
+            background-color: #148eb3;
+            color: #fff;
+            border: 2px solid #148eb3;
+            border-radius: 50rem;
+            font: inherit;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .site-page .btn:hover {
+            background-color: #0d3b66;
+            border-color: #0d3b66;
+            color: #fff;
+        }
+
+        .site-page .btn-outline {
+            background-color: transparent;
+            color: #0d3b66;
+            border-color: #0d3b66;
+        }
+
+        .site-page .btn-outline:hover {
+            background-color: #0d3b66;
+            color: #fff;
+        }
+
+        .site-page .btn:focus-visible {
+            outline: 3px solid #0d3b66;
+            outline-offset: 3px;
+        }
+
+        .cta-box {
+            background-color: #f7f3e9;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .site-page .cta-box h2 {
+            margin: 0 0 0.5rem;
+        }
+
+        .site-page .cta-box h2::before {
+            display: none;
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .glance {
+                padding: 1rem;
+            }
+
+            .glance dl {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+
+            .glance dd {
+                margin-bottom: 0.7rem;
+            }
+
+            .card-grid,
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .site-page .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ===== CONTACT PAGE ===== */
+        .card-grid.contact-grid {
+            grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-page .contact-card .value {
+            color: #0d3b66;
+            font-size: 1.05rem;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+            margin: 0 0 0.75rem;
+        }
+
+        .contact-card .btn {
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.9rem;
+        }
+
+        .feedback-form {
+            background-color: #f0f4f8;
+            border: 2px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .field {
+            margin-bottom: 1rem;
+        }
+
+        .field label {
+            display: block;
+            color: #0d3b66;
+            font-weight: bold;
+            margin-bottom: 0.35rem;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            padding: 0.65rem 0.8rem;
+            border: 2px solid #148eb3;
+            border-radius: 0.4rem;
+            background-color: #fff;
+            color: #222;
+            font: inherit;
+        }
+
+        .field textarea {
+            min-height: 9rem;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: 3px solid #0d3b66;
+            outline-offset: 1px;
+        }
+
+        .site-page .form-note {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0.75rem 0 0;
+        }
+
+        .map-frame {
+            border: 3px solid #148eb3;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .map-frame img {
+            display: block;
+            width: 100%;
+            max-width: 40rem;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 0.25rem;
+        }
+
+        .site-page .map-caption {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0.5rem 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .feedback-form {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <img src="./logo.jpg" alt="School Logo" class="school-logo">
+            
+        </div>
+        <nav>
+<ul>
+<li><a href="./My_New_Home_page.html">Home</a></li>
+<li class="dropdown">
+    <a href="./Academics-Mugwanya.html">Academics</a>
+    <details>
+        <summary aria-label="Show Academics menu" title="Show Academics menu"></summary>
+        <ul class="dropdown-content">
+           <li><a href="./admissions.html">Admissions</a></li>
+           <li><a href="https://drive.google.com/file/d/1FxmQd8qM7dCDpQYCSMw9QHugeWzFa9pw/view?usp=drive_link">Circular</a></li>
+           <li><a href="./ple-performance.html">PLE Performance</a></li>
+        </ul>
+    </details>
+</li>
+<li><a href="./Services of Mugwanya.html">Our Services</a></li>
+<li><a href="./About Mugwanya.html">About Us</a></li>
+<li><a href="./Contacts Mugwanya.html">Contact Us & Feedback</a></li>
+<li class="apply-item"><a class="apply-btn" href="./Application Form.html">Apply Now<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <div class="site-page">
+            <p class="kicker">Contact Us</p>
+            <h1>Contact and Feedback</h1>
+            <p class="standfirst">We would love to hear from you.</p>
+            <hr class="page-rule">
+            <p>Whether you want to ask about admissions, arrange a visit, or share a compliment or a suggestion, we would be glad to hear from you. Please use any of the ways below to reach the school.</p>
+
+            <h2>How to reach us</h2>
+            <div class="card-grid contact-grid">
+                <div class="info-card contact-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+                    <h3>Email</h3>
+                    <p class="value">info@mugwanya.ac.ug</p>
+                    <a class="btn" href="mailto:info@mugwanya.ac.ug">Send an email</a>
+                </div>
+                <div class="info-card contact-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+                    <h3>Telephone</h3>
+                    <p class="value">+256356523700</p>
+                    <a class="btn" href="tel:+256356523700">Call us</a>
+                </div>
+                <div class="info-card contact-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg></div>
+                    <h3>WhatsApp</h3>
+                    <p class="value">+256720974403</p>
+                    <a class="btn" href="https://wa.me/256720974403" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                </div>
+                <div class="info-card contact-card">
+                    <div class="card-icon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.7 4H7.3a2 2 0 0 0-1.8 1.1z"/></svg></div>
+                    <h3>Postal address</h3>
+                    <p class="value">P. O. Box 1234, Masaka Uganda</p>
+                </div>
+            </div>
+
+            <h2>Send us your feedback</h2>
+            <p>Your views help us to serve our pupils and families better. Tell us what we are doing well and what we can improve.</p>
+            <form class="feedback-form" action="mailto:info@mugwanya.ac.ug?subject=Website%20feedback" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <div class="field">
+                        <label for="fb-name">Your name</label>
+                        <input type="text" id="fb-name" name="Name" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="fb-contact">Your email or phone number</label>
+                        <input type="text" id="fb-contact" name="Contact" autocomplete="email" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="fb-topic">What is your message about?</label>
+                    <select id="fb-topic" name="Topic">
+                        <option>General feedback</option>
+                        <option>Admissions question</option>
+                        <option>Compliment</option>
+                        <option>Suggestion</option>
+                        <option>Complaint</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="fb-message">Your message</label>
+                    <textarea id="fb-message" name="Message" required></textarea>
+                </div>
+                <button class="btn" type="submit"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg> Send feedback</button>
+                <p class="form-note">When you press the button, your email program opens with your message ready to send to the school.</p>
+            </form>
+
+            <h2>Visit the school</h2>
+            <div class="two-col">
+                <div>
+                    <p>The school is on <b>Ssaza Road, Katwe-Butego Sub-County, Masaka District</b>, about 87 miles from Kampala.</p>
+                    <p>Parents and guardians are welcome to visit. It is helpful to telephone or send a message beforehand so that someone is ready to receive you.</p>
+                    <p>Tap or click the map to open the exact location in Google Maps and get directions from wherever you are.</p>
+                </div>
+                <div>
+                    <div class="map-frame">
+                        <a href="https://www.google.com/maps/place/St.+John+Paul+Mugwanya+Complex+Day+and+Boarding+Primary+School/@-0.3178898,31.734871,17z/data=!3m1!4b1!4m6!3m5!1s0x19d78c1d9682409f:0x3604279383b4a34f!8m2!3d-0.3178898!4d31.734871!16s%2Fg%2F1vxq92x7?entry=ttu&amp;g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+                            <img src="./Mugwanya Map.png" alt="Map showing the location of St. John Paul Mugwanya Complex in Masaka">
+                        </a>
+                        <p class="map-caption">Click the map to open Google Maps</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Quick answers</h2>
+            <div class="card-grid">
+                <div class="info-card">
+                    <h3>How do I apply?</h3>
+                    <p>Fill in the application form online, or ask the school office for guidance.</p>
+                    <a class="btn" href="./Application Form.html">Apply now</a>
+                </div>
+                <div class="info-card">
+                    <h3>Where are school fees and requirements listed?</h3>
+                    <p>The fees for each class and the requirements for Day and Boarding pupils are in the school circular, under the Academics menu.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Where do I buy school uniform?</h3>
+                    <p>All uniforms must be bought from the school administration at the designated times. Please ask the school office for dates and sizes.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@mugwanya.ac.ug">info@mugwanya.ac.ug</a></p>
+            <p>Tel: <a href="tel:+256356523700">+256356523700</a></p>
+            <p>P. O. Box 1234, Masaka Uganda</p>
+        </div>
+        <br>
+        <p>&copy; 2026 St. John Paul Mugwanya Complex Day and Boarding Primary School. All rights reserved.</p>
+        <p>Managed by; S&B Techinologies</p>
+    </footer>
+
+</body>
+</html>
